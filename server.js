@@ -27,8 +27,10 @@ console.log("Error connecting Database instance due to:", err);
 }
 });
 
+const routes = require('./routes/todoRoute'); //importing route
 app.use(jsonParser)
-app.use('/', indexRoute);
+routes(app);
+//app.use('/', indexRoute);
 
 
 app.listen(port, () => {
